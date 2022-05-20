@@ -12,10 +12,8 @@
 
 <link rel="shortcut icon" href="fav.icon.png" />
 <link rel="stylesheet" href="fontawesome-free-6.1.1-web\css\all.min.css" >
-<script src="https://unpkg.com/vue@3"></script>
 
 </head>
-
 
 
 <body>
@@ -64,8 +62,32 @@
                                             <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="¿Cómo podemos ayudarte?"></textarea> 
                                         </p>                    
                       
-                        <button type="submit" name="enviar_formulario" id="enviar"><p>ENVIAR</p></button>
         
+                                      <form name="f1" action="destino.html" onsubmit="return validacion();">
+                                          <label for="enviar">Acepto los términos y condiciones</label>
+                                          <input type="checkbox" id="enviar"> <label id="mensaje1"></label><br><br>
+                                          
+                                      </form>
+                                  
+                                      <script>
+                                          function validacion() 
+                                          {
+                                              
+                                              elemento = document.getElementById("enviar");
+                                              
+                                              if( !elemento.checked ) 
+                                              {
+                                                  document.getElementById('mensaje1').innerHTML = "Debe aceptar los términos y condiciones" ;
+                                                  return false;
+                                              }
+                                              
+                                              return true;          
+                                          }
+                                      </script>
+                      
+                      <button type="submit" name="enviar_formulario" id="enviar"><p>ENVIAR</p></button>
+                      <button type="reset" name="enviar_formulario" id="cancelar"><p>CANCELAR</p></button>
+
                         <p class="aviso">
                           <span class="obligatorio"> * </span>Campos obligatorios.
                         </p>          
@@ -76,14 +98,14 @@
     
           <section class="parallax-chico">
             <h2> <a href="home.html" > Volver al inicio </a> </h2>
-        </section>
+         
     
     <div class="container"></div>
    
     <footer>
       <section>
         <div >
-          <h2 name="fvalida2" class="ft-title">Suscribite </h2>
+          <h3 class="ft-title">Suscribite </h3>
           <p style="text-align: center">Suscribite a nuestro portal para conocer los últimos ingresos.</p>
           <form style="text-align: center">
             <input type="email" name="email" placeholder="Correo electrónico">
